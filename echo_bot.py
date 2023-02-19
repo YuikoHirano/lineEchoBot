@@ -51,9 +51,9 @@ def handle_text_message(event):
         line_bot_api.reply_message(
             event.reply_token,
             [
-                TextSendMessage(text="From: " + profile.display_name),
-                TextSendMessage(text="Received message: " + text)
-            ],
+                TextSendMessage(text=profile.display_name + "から"),
+                TextSendMessage(text="「" + text + "」と通知が着ました")
+            ]
         )
     else:
         line_bot_api.reply_message(
